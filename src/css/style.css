@@ -432,7 +432,7 @@ body .main-container #main .container .info .about .rate {
   display: flex;
 }
 body .main-container #main .container .info .about .rate .rating {
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-weight: bold;
 }
 body .main-container #main .container .info .about .rate img {
@@ -549,6 +549,7 @@ body .main-container #main .cinema-hall .seats .seat {
   height: 1.5em;
   justify-self: center;
   align-self: center;
+  cursor: pointer;
 }
 body .main-container #main .cinema-hall .seats .seats-1,
 body .main-container #main .cinema-hall .seats .seats-2,
@@ -574,11 +575,11 @@ body .main-container #main .cinema-hall .seats-info {
   display: flex;
   margin: 1em 6em 0;
 }
-body .main-container #main .cinema-hall .seats-info .seat {
+body .main-container #main .cinema-hall .seats-info .seat-about {
   display: flex;
   align-items: center;
 }
-body .main-container #main .cinema-hall .seats-info .seat:not(:last-child) {
+body .main-container #main .cinema-hall .seats-info .seat-about:not(:last-child) {
   margin-right: 1em;
 }
 body .main-container #main .cinema-hall .seats-info img {
@@ -608,20 +609,21 @@ body .main-container #main .payment {
 body .main-container #main .payment .total-paid {
   font-size: 0.8em;
 }
-body .main-container #main .payment .total-paid .cost {
+body .main-container #main .payment .total-paid .totalPayment {
   font-size: 4em;
 }
-body .main-container #main .payment .total-paid .cost::after {
+body .main-container #main .payment .total-paid .totalPayment::after {
   content: "₽";
   padding-left: 0.2em;
 }
 body .main-container #main .payment .toPayment_button {
-  border: none;
-}
-body .main-container #main .payment .toPayment_button a {
   background-color: #fe8e05;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+body .main-container #main .payment .toPayment_button p {
   color: rgb(255, 255, 255);
   text-decoration: none;
-  border-radius: 5px;
   padding: 1em 2em;
 }
