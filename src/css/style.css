@@ -353,7 +353,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 body .main-container {
-  background: url("/src/img/avengers-bg.png") no-repeat;
+  background: url("src/avengers-bg.png") no-repeat;
   background-size: contain;
   padding-inline: 5em;
 }
