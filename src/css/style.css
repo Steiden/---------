@@ -312,6 +312,36 @@ template {
   display: none;
 }
 
+@media screen and (width <= 2560px) {
+  * {
+    font-size: 20px;
+  }
+}
+@media screen and (width <= 1920px) {
+  * {
+    font-size: 16px;
+  }
+}
+@media screen and (width <= 1440px) {
+  * {
+    font-size: 14px;
+  }
+}
+@media screen and (width <= 1024px) {
+  * {
+    font-size: 12px;
+  }
+}
+@media screen and (width <= 768px) {
+  * {
+    font-size: 10px;
+  }
+}
+@media screen and (width <= 425px) {
+  * {
+    font-size: 8px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -324,9 +354,8 @@ body {
 }
 body .main-container {
   background: url("/src/img/avengers-bg.png") no-repeat;
-  background-size: cover;
+  background-size: contain;
   padding-inline: 5em;
-  height: 100vh;
 }
 body .main-container #header .nav {
   padding: 2em 0;
@@ -346,6 +375,7 @@ body .main-container #header .nav .menu .list {
   list-style: none;
 }
 body .main-container #header .nav .menu .list a {
+  font-size: 0.9em;
   color: white;
   text-decoration: none;
   margin-right: 3em;
@@ -373,13 +403,13 @@ body .main-container #main .container .info_text {
 body .main-container #main .container .info_text p {
   font-size: 0.9em;
   font-weight: 300;
-  text-align: justify;
+  line-height: 1.5em;
 }
 body .main-container #main .container .info .SubTitle {
-  color: gray;
+  color: rgba(255, 255, 255, 0.486);
   opacity: 0.8;
-  font-size: 0.9em;
-  margin: 0;
+  font-weight: 400;
+  margin-bottom: 1em;
 }
 body .main-container #main .container .info .Title {
   margin: 0;
@@ -424,7 +454,7 @@ body .main-container #main .container .play img {
 }
 body .main-container #main .line {
   opacity: 0.5;
-  margin-block: 3em;
+  margin-block: 4em;
 }
 body .main-container #main .session {
   display: flex;
@@ -451,6 +481,9 @@ body .main-container #main .session .date .days .day {
   width: 4em;
   padding: 0.3em;
   font-size: 0.8em;
+}
+body .main-container #main .session .date .days .day span {
+  font-size: 0.9em;
 }
 body .main-container #main .session .date .days .day .bold {
   font-weight: bold;
