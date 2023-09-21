@@ -13,7 +13,7 @@ body {
 	font-family: "Roboto", sans-serif;
 
 	.main-container {
-		background-image: url(src/img/avengers-bg.png);
+		background: url("/src/img/avengers-bg.png") no-repeat;
 		background-size: cover;
 		padding-inline: 5em;
 		height: 100vh;
