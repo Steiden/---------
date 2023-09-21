@@ -64,7 +64,7 @@ body {
 
 				.info {
 					width: 50%;
-					padding-block: 3em;
+					padding-top: 3em;
 
 					&_text {
 						margin-bottom: 2em;
@@ -138,7 +138,7 @@ body {
 
 			.line {
 				opacity: 0.5;
-				margin-bottom: 2em;
+				margin-block: 3em;
 			}
 
 			.session {
@@ -188,7 +188,7 @@ body {
 						}
 					}
 				}
-				
+
 				.cinema {
 					& .select {
 						& select {
@@ -212,6 +212,34 @@ body {
 							padding: 1em;
 						}
 					}
+				}
+			}
+
+			& .cinema-hall {
+				display: grid;
+				grid-template-rows: repeat(2, 1fr);
+				// grid-template-columns: repeat(2, 1fr);
+
+				& img {
+					width: 1.5em;
+				}
+
+				.seats-1,
+				.seats-2,
+				.seats-3 {
+					display: grid;
+				}
+
+				& .seats-1 {
+					grid-row: 1 / 2;
+					grid-template-rows: repeat(4, 1fr);
+					grid-template-columns: repeat(19, 1fr);
+				}
+
+				& .seats-2,
+				& .seats-3 {
+					grid-template-rows: repeat(4, 1fr);
+					grid-template-columns: repeat(10, 1fr);
 				}
 			}
 		}
