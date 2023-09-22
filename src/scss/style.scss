@@ -291,6 +291,13 @@ body {
 						grid-template: repeat(4, 2.3em) / repeat(10, 2.3em);
 						padding-top: 1em;
 					}
+
+					& .seats-2 {
+						margin-right: 1em;
+					}
+					& .seats-3 {
+						margin-left: 1em;
+					}
 				}
 
 				&_line {

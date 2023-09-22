@@ -41,4 +41,17 @@
 	* {
 		font-size: 6px;
 	}
+
+	.seats-1 {
+		grid-template: repeat(4, 2em)/repeat(19, 2em) !important;
+	}
+
+	.seats-2,
+	.seats-3 {
+		grid-template: repeat(4, 2em)/repeat(10, 2em) !important;
+	}
+
+	.seat img {
+		width: 1.5em !important;
+	}
 }

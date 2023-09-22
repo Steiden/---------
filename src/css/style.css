@@ -341,6 +341,16 @@ template {
   * {
     font-size: 6px;
   }
+  .seats-1 {
+    grid-template: repeat(4, 2em)/repeat(19, 2em) !important;
+  }
+  .seats-2,
+  .seats-3 {
+    grid-template: repeat(4, 2em)/repeat(10, 2em) !important;
+  }
+  .seat img {
+    width: 1.5em !important;
+  }
 }
 * {
   margin: 0;
@@ -576,6 +586,12 @@ body .main-container #main .cinema-hall .seats .seats-1 {
 body .main-container #main .cinema-hall .seats .seats-2, body .main-container #main .cinema-hall .seats .seats-3 {
   grid-template: repeat(4, 2.3em)/repeat(10, 2.3em);
   padding-top: 1em;
+}
+body .main-container #main .cinema-hall .seats .seats-2 {
+  margin-right: 1em;
+}
+body .main-container #main .cinema-hall .seats .seats-3 {
+  margin-left: 1em;
 }
 body .main-container #main .cinema-hall_line {
   width: 80%;
