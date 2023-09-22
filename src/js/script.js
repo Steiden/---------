@@ -43,3 +43,8 @@ for (let i = 0; i < dayButtons.length; i++) {
 		daySelected.classList.add('selected');
 	});
 }
+
+// *________________________________Открытие/закрытие гамбургера
+document.querySelector('.gamburger').addEventListener('click', () => {
+	document.querySelector('.gamburger_menu').classList.toggle('open');
+});

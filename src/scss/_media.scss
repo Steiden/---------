@@ -31,15 +31,43 @@
 	}
 }
 
-// @media screen and (width <= 500px) {
-// 	* {
-// 		font-size: 6px;
-// 	}
-// }
-
-@media screen and (width <= 450px) {
+@media screen and (width <= 500px) {
 	* {
 		font-size: 6px;
+	}
+	
+	.container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.info {
+		width: 80% !important;
+	}
+
+	.play {
+		margin-top: 2em;
+		width: 20% !important;
+	}
+
+	.info_text p {
+		font-size: 1.2em !important;
+	}
+
+	.date,
+	.cinema,
+	.time {
+		font-size: 1.5em;
+	}
+
+	.days,
+	.select {
+		font-size: 1.1em;
+		margin-bottom: 1em;
+	}
+
+	.cinema>.select select{
+		width: 20em !important;
 	}
 
 	.seats-1 {
@@ -53,5 +81,13 @@
 
 	.seat img {
 		width: 1.5em !important;
+	}
+
+	#header .menu>.list {
+		display: none !important;
+	}
+
+	.gamburger {
+		display: block !important;
 	}
 }

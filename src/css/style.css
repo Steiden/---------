@@ -337,9 +337,36 @@ template {
     font-size: 10px;
   }
 }
-@media screen and (width <= 450px) {
+@media screen and (width <= 500px) {
   * {
     font-size: 6px;
+  }
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .info {
+    width: 80% !important;
+  }
+  .play {
+    margin-top: 2em;
+    width: 20% !important;
+  }
+  .info_text p {
+    font-size: 1.2em !important;
+  }
+  .date,
+  .cinema,
+  .time {
+    font-size: 1.5em;
+  }
+  .days,
+  .select {
+    font-size: 1.1em;
+    margin-bottom: 1em;
+  }
+  .cinema > .select select {
+    width: 20em !important;
   }
   .seats-1 {
     grid-template: repeat(4, 2em)/repeat(19, 2em) !important;
@@ -350,6 +377,12 @@ template {
   }
   .seat img {
     width: 1.5em !important;
+  }
+  #header .menu > .list {
+    display: none !important;
+  }
+  .gamburger {
+    display: block !important;
   }
 }
 * {
@@ -377,13 +410,43 @@ body .main-container #header .nav .menu {
   display: flex;
   align-items: center;
 }
+body .main-container #header .nav .menu .gamburger {
+  margin-left: 2em;
+  display: none;
+  position: relative;
+  font-size: 2em;
+  cursor: pointer;
+}
+body .main-container #header .nav .menu .gamburger_menu {
+  background-color: #621402;
+  border-radius: 5px;
+  display: none;
+  position: absolute;
+  z-index: 2;
+}
+body .main-container #header .nav .menu .gamburger_menu .list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-align: left;
+}
+body .main-container #header .nav .menu .gamburger_menu .list .item {
+  padding: 0.7em 0.5em;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+body .main-container #header .nav .menu .gamburger_menu .list .item:hover {
+  background-color: rgba(255, 255, 255, 0.36);
+}
 body .main-container #header .nav .menu img {
   width: 2em;
-  margin-right: 4em;
 }
 body .main-container #header .nav .menu .list {
   display: flex;
   list-style: none;
+  margin-left: 4em;
 }
 body .main-container #header .nav .menu .list a {
   font-size: 0.9em;
@@ -569,6 +632,11 @@ body .main-container #main .cinema-hall .seats .seat {
   height: 1.5em;
   justify-self: center;
   align-self: center;
+}
+body .main-container #main .cinema-hall .seats .seat:not(.selected):not(.close):hover {
+  opacity: 0.6;
+}
+body .main-container #main .cinema-hall .seats .seat:not(.close) {
   cursor: pointer;
 }
 body .main-container #main .cinema-hall .seats .seats-1,
@@ -652,4 +720,8 @@ body .main-container #main .payment .toPayment_button p {
   color: rgb(255, 255, 255);
   text-decoration: none;
   padding: 1em 2em;
+}
+
+.open {
+  display: block !important;
 }
