@@ -1,7 +1,10 @@
-const seats = document.querySelectorAll('.seat');
+import { closeSelectedSeats } from './modules/payment.mjs';
 
+const seats = document.querySelectorAll('.seat');
+const paymentText = document.querySelector('.totalPayment');
 let totalPayment = 0;
 
+// *________________________________Выбор места
 for (let i = 0; i < seats.length; i++) {
 	seats[i].addEventListener('click', () => {
 		if (seats[i].classList.contains('close')) { }
@@ -9,28 +12,34 @@ for (let i = 0; i < seats.length; i++) {
 			seats[i].classList.remove('selected');
 			seats[i].innerHTML = `<img src="src/svg/seat.svg" alt="seat">`;
 			totalPayment -= 800;
-			refreshPayment();
 		} else {
 			seats[i].classList.add('selected');
 			seats[i].innerHTML = `<img src="src/svg/seat-selected.svg" alt="seat-selected">`;
 			totalPayment += 800;
-			refreshPayment();
 		}
+		refreshPayment();
 	});
 }
 
+// * ________________________________Оплата
 const paymentButton = document.getElementById('paymentButton').addEventListener('click', () => {
-	for (let i = 0; i < seats.length; i++) {
-		if (seats[i].classList.contains('selected')) {
-			seats[i].classList.remove('selected');
-			seats[i].classList.add('close');
-			seats[i].innerHTML = `<img src="src/svg/seat-close.svg" alt="seat-close">`;
-		}
-	}
+	closeSelectedSeats(seats);
 	totalPayment = 0;
 	refreshPayment();
 });
 
+// *________________________________Обновление общей суммы
 function refreshPayment() {
-	document.querySelector(".totalPayment").textContent = totalPayment;
+	paymentText.textContent = totalPayment;
+}
+
+// *________________________________Выбор дня фильма
+const dayButtons = document.querySelectorAll(".day");
+let daySelected = document.querySelector('.day.selected');
+for (let i = 0; i < dayButtons.length; i++) {
+	dayButtons[i].addEventListener('click', () => {
+		daySelected.classList.remove('selected');
+		daySelected = dayButtons[i];
+		daySelected.classList.add('selected');
+	});
 }

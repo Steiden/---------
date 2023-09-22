@@ -30,6 +30,7 @@ body {
 					align-items: center;
 
 					& img {
+						width: 2em;
 						margin-right: 4em;
 					}
 
@@ -53,6 +54,7 @@ body {
 					width: 30em;
 
 					& img {
+						width: 2em;
 						margin-inline: 0.5em;
 					}
 				}
@@ -144,6 +146,7 @@ body {
 
 			.session {
 				display: flex;
+				flex-wrap: wrap;
 
 				& h6 {
 					font-size: 0.8em;
@@ -157,6 +160,7 @@ body {
 				}
 
 				& .date {
+					margin-bottom: 1.5em;
 					& .days {
 						display: flex;
 
@@ -171,6 +175,7 @@ body {
 							width: 4em;
 							padding: 0.3em;
 							font-size: 0.8em;
+							cursor: pointer;
 
 							& span {
 								font-size: 0.9em;
@@ -203,6 +208,10 @@ body {
 							color: white;
 							padding: 1em;
 							width: 30em;
+
+							& option {
+								font-size: 1.1em;
+							}
 						}
 					}
 				}

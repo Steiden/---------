@@ -337,9 +337,9 @@ template {
     font-size: 10px;
   }
 }
-@media screen and (width <= 425px) {
+@media screen and (width <= 450px) {
   * {
-    font-size: 8px;
+    font-size: 6px;
   }
 }
 * {
@@ -368,6 +368,7 @@ body .main-container #header .nav .menu {
   align-items: center;
 }
 body .main-container #header .nav .menu img {
+  width: 2em;
   margin-right: 4em;
 }
 body .main-container #header .nav .menu .list {
@@ -387,6 +388,7 @@ body .main-container #header .nav .user {
   width: 30em;
 }
 body .main-container #header .nav .user img {
+  width: 2em;
   margin-inline: 0.5em;
 }
 body .main-container #main .container {
@@ -458,6 +460,7 @@ body .main-container #main .line {
 }
 body .main-container #main .session {
   display: flex;
+  flex-wrap: wrap;
 }
 body .main-container #main .session h6 {
   font-size: 0.8em;
@@ -466,6 +469,9 @@ body .main-container #main .session h6 {
 }
 body .main-container #main .session .date, body .main-container #main .session .cinema {
   margin-right: 3em;
+}
+body .main-container #main .session .date {
+  margin-bottom: 1.5em;
 }
 body .main-container #main .session .date .days {
   display: flex;
@@ -481,6 +487,7 @@ body .main-container #main .session .date .days .day {
   width: 4em;
   padding: 0.3em;
   font-size: 0.8em;
+  cursor: pointer;
 }
 body .main-container #main .session .date .days .day span {
   font-size: 0.9em;
@@ -504,6 +511,9 @@ body .main-container #main .session .cinema .select select {
   color: white;
   padding: 1em;
   width: 30em;
+}
+body .main-container #main .session .cinema .select select option {
+  font-size: 1.1em;
 }
 body .main-container #main .session .time .select select {
   background-color: #8c4535;
