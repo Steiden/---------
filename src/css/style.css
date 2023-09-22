@@ -405,6 +405,7 @@ body .main-container #header .nav {
   font-size: 0.7em;
   display: flex;
   justify-content: space-between;
+  flex-wrap: nowrap;
 }
 body .main-container #header .nav .menu {
   display: flex;
@@ -428,6 +429,7 @@ body .main-container #header .nav .menu .gamburger_menu {
 body .main-container #header .nav .menu .gamburger_menu .list {
   background-color: #621402;
   display: flex;
+  align-items: center;
   flex-direction: column;
   list-style: none;
   color: rgb(255, 255, 255);
@@ -445,6 +447,7 @@ body .main-container #header .nav .menu img {
 body .main-container #header .nav .menu .list {
   display: flex;
   list-style: none;
+  margin: 0;
   margin-left: 4em;
 }
 body .main-container #header .nav .menu .list a {
@@ -483,7 +486,9 @@ body .main-container #main .container .info .SubTitle {
   color: rgba(255, 255, 255, 0.486);
   opacity: 0.8;
   font-weight: 400;
-  margin-bottom: 1em;
+  font-size: 1.3em;
+  margin: 0;
+  margin-bottom: 0.5em;
 }
 body .main-container #main .container .info .Title {
   margin: 0;
@@ -530,6 +535,20 @@ body .main-container #main .line {
   opacity: 0.5;
   margin-block: 4em;
 }
+body .main-container #main .container-carousel {
+  background: linear-gradient(rgba(94, 19, 2, 0.0039215686), rgba(88, 18, 2, 0.5529411765));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35em;
+  border-radius: 10px;
+}
+body .main-container #main .container-carousel .carousel {
+  max-width: 50em !important;
+}
+body .main-container #main .container-carousel .carousel img {
+  width: 50em !important;
+}
 body .main-container #main .session {
   display: flex;
   flex-wrap: wrap;
@@ -557,7 +576,7 @@ body .main-container #main .session .date .days .day {
   border-radius: 4px;
   height: 4em;
   width: 4em;
-  padding: 0.3em;
+  padding: 2.5em;
   font-size: 0.8em;
   cursor: pointer;
 }
@@ -609,6 +628,7 @@ body .main-container #main .cinema-hall .screen_line {
   border: none;
   height: 0.5em;
   width: 90%;
+  margin: 0;
 }
 body .main-container #main .cinema-hall .screen_light {
   background: linear-gradient(rgba(255, 255, 255, 0.219), rgba(255, 255, 255, 0));
@@ -676,7 +696,7 @@ body .main-container #main .cinema-hall .seats-info .seat-about:not(:last-child)
   margin-right: 1em;
 }
 body .main-container #main .cinema-hall .seats-info img {
-  width: 1.8em;
+  width: 3em;
   padding: 0.5em;
 }
 body .main-container #main .cinema-hall .seats-info .free, body .main-container #main .cinema-hall .seats-info .selected, body .main-container #main .cinema-hall .seats-info .close {
@@ -723,4 +743,8 @@ body .main-container #main .payment .toPayment_button p {
 
 .open {
   display: block !important;
+}
+
+p {
+  margin: 0;
 }

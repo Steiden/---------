@@ -48,3 +48,5 @@ for (let i = 0; i < dayButtons.length; i++) {
 document.querySelector('.gamburger').addEventListener('click', () => {
 	document.querySelector('.gamburger_menu').classList.toggle('open');
 });
+
+// *________________________________Карусель скриншотов из фильма

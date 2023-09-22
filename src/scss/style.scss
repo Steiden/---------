@@ -24,6 +24,7 @@ body {
 				font-size: 0.7em;
 				display: flex;
 				justify-content: space-between;
+				flex-wrap: nowrap;
 
 				& .menu {
 					display: flex;
@@ -47,6 +48,7 @@ body {
 							& .list {
 								background-color: #621402;
 								display: flex;
+								align-items: center;
 								flex-direction: column;
 								list-style: none;
 								color: rgb(255, 255, 255);
@@ -70,6 +72,7 @@ body {
 					& .list {
 						display: flex;
 						list-style: none;
+						margin: 0;
 						margin-left: 4em;
 
 						& a {
@@ -117,7 +120,9 @@ body {
 						color: rgba(255, 255, 255, 0.486);
 						opacity: 0.8;
 						font-weight: 400;
-						margin-bottom: 1em;
+						font-size: 1.3em;
+						margin: 0;
+						margin-bottom: .5em;
 					}
 
 					.Title {
@@ -178,6 +183,22 @@ body {
 				margin-block: 4em;
 			}
 
+			.container-carousel {
+				background: linear-gradient(#5e130201, #5812028d);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 35em;
+				border-radius: 10px;
+				.carousel {
+					max-width: 50em !important;
+
+					& img {
+						width: 50em !important;
+					}
+				}
+			}
+
 			.session {
 				display: flex;
 				flex-wrap: wrap;
@@ -207,7 +228,7 @@ body {
 							border-radius: 4px;
 							height: 4em;
 							width: 4em;
-							padding: 0.3em;
+							padding: 2.5em;
 							font-size: 0.8em;
 							cursor: pointer;
 
@@ -278,6 +299,7 @@ body {
 						border: none;
 						height: 0.5em;
 						width: 90%;
+						margin: 0;
 					}
 
 					&_light {
@@ -360,7 +382,7 @@ body {
 					}
 
 					& img {
-						width: 1.8em;
+						width: 3em;
 						padding: 0.5em;
 					}
 
@@ -425,4 +447,8 @@ body {
 
 .open {
 	display: block !important;
+}
+
+p {
+	margin: 0;
 }
