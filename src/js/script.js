@@ -21,14 +21,50 @@ for (let i = 0; i < seats.length; i++) {
 	});
 }
 
-// * ________________________________Оплата
-const paymentButton = document.getElementById('paymentButton').addEventListener('click', () => {
+// ! ________________________________Оплата
+document.getElementById('paymentButton').addEventListener('click', () => {
+
+	// *________________________________Открытие модалки
+	document.querySelector(".modal").classList.add("show");
+
+	// *________________________________Заполнение информацией
+	const modalContentInfo = document.querySelector(".modal-content .info");
+	modalContentInfo.innerHTML = "";
+
+	const date = document.querySelector(".day.selected input").value;
+	const dateInfo = document.createElement('p');
+	dateInfo.textContent = `Дата: ${date}`;
+
+	const cinemaInfo = document.createElement('p');
+	cinemaInfo.textContent = `Кинотеатр: ${cinemaValue}`;
+
+	const timeInfo = document.createElement('p');
+	timeInfo.textContent = `Время: ${timeValue}`;
+
+	const priceInfo = document.createElement('p');
+	priceInfo.textContent = `Итоговая сумма: ${totalPayment} ₽`;
+
+	modalContentInfo.appendChild(dateInfo);
+	modalContentInfo.appendChild(cinemaInfo);
+	modalContentInfo.appendChild(timeInfo);
+	modalContentInfo.appendChild(priceInfo);
+
+	// TODO Сделать уведомление об невыбранных местах и невозможность оплаты
+
+	// *________________________________Обновление свободных мест
 	closeSelectedSeats(seats);
+
+	// *________________________________Обновление общей суммы
 	totalPayment = 0;
 	refreshPayment();
 });
 
-// *________________________________Обновление общей суммы
+// * ________________________________Закрытие модалки
+document.querySelector('.modal-close').addEventListener('click', () => {
+	document.querySelector(".modal").classList.remove("show");
+});
+
+// !________________________________Обновление общей суммы
 function refreshPayment() {
 	paymentText.textContent = totalPayment;
 }
@@ -44,9 +80,26 @@ for (let i = 0; i < dayButtons.length; i++) {
 	});
 }
 
-// *________________________________Открытие/закрытие гамбургера
+// !________________________________Открытие/закрытие гамбургера
 document.querySelector('.gamburger').addEventListener('click', () => {
-	document.querySelector('.gamburger_menu').classList.toggle('open');
+	document.querySelector('.gamburger_menu').classList.toggle('show-gamburger');
+});
+window.addEventListener('click', (e) => {
+	if (e.target != document.querySelector('.gamburger')) {
+		document.querySelector('.gamburger_menu').classList.remove('show-gamburger');
+	}
 });
 
-// *________________________________Карусель скриншотов из фильма
+// !________________________________onChange на cinema
+const cinemaSelect = document.getElementById("cinema");
+let cinemaValue = cinemaSelect.value;
+cinemaSelect.addEventListener("change", (e) => {
+	cinemaValue = cinemaSelect.value;
+});
+
+// !________________________________onChange на time
+const timeSelect = document.getElementById("time");
+let timeValue = timeSelect.value;
+timeSelect.addEventListener("change", (e) => {
+	timeValue = timeSelect.value;
+});

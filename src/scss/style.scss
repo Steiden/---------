@@ -39,7 +39,10 @@ body {
 
 						&_menu {
 							border-radius: 5px;
-							display: none;
+							visibility: hidden;
+							opacity: 0;
+							transition: all linear 0.3s;
+							transform: translateY(50%);
 							position: absolute;
 							top: 3em;
 							left: -4em;
@@ -230,7 +233,17 @@ body {
 							width: 4em;
 							padding: 2.5em;
 							font-size: 0.8em;
-							cursor: pointer;
+
+							& input {
+								position: absolute;
+								visibility: hidden;
+							}
+							& label {
+								position: absolute;
+								width: 4em;
+								height: 4em;
+								cursor: pointer;
+							}
 
 							& span {
 								font-size: 0.9em;
@@ -388,7 +401,7 @@ body {
 
 					& .free,
 					& .selected,
-					& .close {
+					& .closed {
 						display: flex;
 						font-weight: 300;
 						font-size: 0.8em;
@@ -445,10 +458,65 @@ body {
 	}
 }
 
-.open {
-	display: block !important;
+.show {
+	visibility: visible !important;
+	opacity: 1 !important;
+	transform: translate(-50%, -50%) !important;
+}
+
+.show-gamburger {
+	visibility: visible !important;
+	opacity: 1 !important;
+	transform: translateY(-1%) !important;
 }
 
 p {
 	margin: 0;
+}
+
+.modal {
+	display: block !important;
+	visibility: hidden;
+	opacity: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%);
+	transition: all linear 0.3s;
+	color: black;
+	width: 35em;
+	height: auto;
+
+	.modal-close {
+		color: black;
+		position: absolute;
+		right: .4em;
+		z-index: 1;
+
+		.close-btn {
+			background-color: transparent;
+			border: none;
+		}
+	}
+
+	.modal-content {
+		padding: 1em;
+
+		&>p:first-of-type {
+			font-size: 1.5em;
+			margin-bottom: 0.5em;
+		}
+
+		& .info p {
+			margin-left: 1em;
+		}
+
+		& h3 {
+			margin-top: 1em;
+			text-align: center;
+		}
+
+		& .totalSum::after {
+			content: "₽";
+		}
+	}
 }

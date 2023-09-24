@@ -449,7 +449,10 @@ body .main-container #header .nav .menu .gamburger {
 }
 body .main-container #header .nav .menu .gamburger_menu {
   border-radius: 5px;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: all linear 0.3s;
+  transform: translateY(50%);
   position: absolute;
   top: 3em;
   left: -4em;
@@ -607,6 +610,15 @@ body .main-container #main .session .date .days .day {
   width: 4em;
   padding: 2.5em;
   font-size: 0.8em;
+}
+body .main-container #main .session .date .days .day input {
+  position: absolute;
+  visibility: hidden;
+}
+body .main-container #main .session .date .days .day label {
+  position: absolute;
+  width: 4em;
+  height: 4em;
   cursor: pointer;
 }
 body .main-container #main .session .date .days .day span {
@@ -728,7 +740,7 @@ body .main-container #main .cinema-hall .seats-info img {
   width: 3em;
   padding: 0.5em;
 }
-body .main-container #main .cinema-hall .seats-info .free, body .main-container #main .cinema-hall .seats-info .selected, body .main-container #main .cinema-hall .seats-info .close {
+body .main-container #main .cinema-hall .seats-info .free, body .main-container #main .cinema-hall .seats-info .selected, body .main-container #main .cinema-hall .seats-info .closed {
   display: flex;
   font-weight: 300;
   font-size: 0.8em;
@@ -770,10 +782,58 @@ body .main-container #main .payment .toPayment_button p {
   padding: 1em 2em;
 }
 
-.open {
-  display: block !important;
+.show {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.show-gamburger {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: translateY(-1%) !important;
 }
 
 p {
   margin: 0;
+}
+
+.modal {
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  transition: all linear 0.3s;
+  color: black;
+  width: 35em;
+  height: auto;
+}
+.modal .modal-close {
+  color: black;
+  position: absolute;
+  right: 0.4em;
+  z-index: 1;
+}
+.modal .modal-close .close-btn {
+  background-color: transparent;
+  border: none;
+}
+.modal .modal-content {
+  padding: 1em;
+}
+.modal .modal-content > p:first-of-type {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+.modal .modal-content .info p {
+  margin-left: 1em;
+}
+.modal .modal-content h3 {
+  margin-top: 1em;
+  text-align: center;
+}
+.modal .modal-content .totalSum::after {
+  content: "₽";
 }
