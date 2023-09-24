@@ -339,7 +339,7 @@ template {
 }
 @media screen and (width <= 500px) {
   * {
-    font-size: 6px;
+    font-size: 8px;
   }
   .container {
     flex-direction: column;
@@ -352,18 +352,32 @@ template {
     margin-top: 2em;
     width: 20% !important;
   }
-  .info_text p {
-    font-size: 1.2em !important;
+  .info_text p,
+  .about > .duration p,
+  .about > .rate p {
+    font-size: 1.4em !important;
+  }
+  .container-carousel {
+    height: auto !important;
+  }
+  .container-carousel .carousel {
+    width: 100%;
   }
   .date,
   .cinema,
   .time {
     font-size: 1.5em;
   }
+  .day {
+    font-size: 0.6em !important;
+  }
   .days,
   .select {
     font-size: 1.1em;
     margin-bottom: 1em;
+  }
+  .session select {
+    font-size: 0.9em;
   }
   .cinema > .select select {
     width: 20em !important;
@@ -383,6 +397,21 @@ template {
   }
   .gamburger {
     display: block !important;
+  }
+}
+@media screen and (width <= 320px) {
+  .seat img {
+    width: 1.2em !important;
+  }
+  .seats-1 {
+    grid-template: repeat(4, 1.7em)/repeat(19, 1.7em) !important;
+  }
+  .seats-2,
+  .seats-3 {
+    grid-template: repeat(4, 1.7em)/repeat(10, 1.7em) !important;
+  }
+  .seats-info {
+    justify-content: center;
   }
 }
 * {
@@ -545,9 +574,6 @@ body .main-container #main .container-carousel {
 }
 body .main-container #main .container-carousel .carousel {
   max-width: 50em !important;
-}
-body .main-container #main .container-carousel .carousel img {
-  width: 50em !important;
 }
 body .main-container #main .session {
   display: flex;
