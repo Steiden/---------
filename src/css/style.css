@@ -507,7 +507,7 @@ body .main-container #main .container .info_text {
   margin-bottom: 2em;
 }
 body .main-container #main .container .info_text p {
-  font-size: 0.9em;
+  font-size: 1.1em;
   font-weight: 300;
   line-height: 1.5em;
 }
@@ -563,6 +563,9 @@ body .main-container #main .container .play img {
 body .main-container #main .line {
   opacity: 0.5;
   margin-block: 4em;
+}
+body .main-container #main .mt-50vh {
+  margin-top: 50vh;
 }
 body .main-container #main .container-carousel {
   background: linear-gradient(rgba(94, 19, 2, 0.0039215686), rgba(88, 18, 2, 0.5529411765));
