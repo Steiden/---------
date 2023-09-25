@@ -233,6 +233,7 @@ body {
 							width: 4em;
 							padding: 2.5em;
 							font-size: 0.8em;
+							user-select: none;
 
 							& input {
 								position: absolute;
@@ -338,6 +339,7 @@ body {
 						height: 1.5em;
 						justify-self: center;
 						align-self: center;
+						user-select: none;
 
 						&:not(.selected):not(.close):hover {
 							opacity: 0.6;
@@ -388,6 +390,7 @@ body {
 					& .seat-about {
 						display: flex;
 						align-items: center;
+						user-select: none;
 
 						&:not(:last-child) {
 							margin-right: 1em;
@@ -413,6 +416,8 @@ body {
 
 					& .close {
 						color: rgba(255, 255, 255, 0.39);
+						font-weight: 300;
+						font-size: .8em;
 					}
 
 					.selected {
@@ -441,6 +446,7 @@ body {
 				}
 
 				& .toPayment {
+					user-select: none;
 					&_button {
 						background-color: #fe8e05;
 						border-radius: 5px;
@@ -470,11 +476,18 @@ body {
 	transform: translateY(-1%) !important;
 }
 
+.show-error {
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+
 p {
 	margin: 0;
 }
 
 .modal {
+	border: 1px solid rgba(0, 0, 0);
+	border-radius: 10px;
 	display: block !important;
 	visibility: hidden;
 	opacity: 0;
@@ -482,23 +495,29 @@ p {
 	left: 50%;
 	transform: translate(-50%);
 	transition: all linear 0.3s;
-	color: black;
+	color: white;
 	width: 35em;
 	height: auto;
 
+	background: center / cover url("../img/mainBackground.png");
+
+
 	.modal-close {
-		color: black;
 		position: absolute;
-		right: .4em;
+		padding: 0.4em;
+		right: 0;
 		z-index: 1;
 
 		.close-btn {
+			color: white;
 			background-color: transparent;
 			border: none;
 		}
 	}
 
 	.modal-content {
+		background-color: transparent;
+		backdrop-filter: blur(25px);
 		padding: 1em;
 
 		&>p:first-of-type {
@@ -518,5 +537,55 @@ p {
 		& .totalSum::after {
 			content: "₽";
 		}
+	}
+}
+
+.error {
+	background-color: rgb(186, 30, 30);
+	border-radius: 25px;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	top: .3em;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 30em;
+	height: 2em;
+	transition: all linear 0.3s;
+	visibility: hidden;
+	opacity: 0;
+
+	&-close button {
+		background-color: transparent;
+		border: none;
+		color: rgb(255, 255, 255);
+		margin-inline: .5em;
+	}
+
+	&-text {
+		display: flex;
+		margin-inline: 1em;
+
+		&_type {
+			color: rgb(102, 6, 6);
+			font-weight: bold;
+		}
+
+		&_content {
+			margin-inline: 1em;
+		}
+	}
+	
+	&-line {
+		position: absolute;
+		bottom: 0;
+		left: 1em;
+		width: 28em;
+		height: 0.1em;
+		border-radius: 25px;
+		background-color: white;
+		transition: all 3s linear;
 	}
 }

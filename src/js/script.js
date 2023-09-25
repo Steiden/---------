@@ -24,44 +24,58 @@ for (let i = 0; i < seats.length; i++) {
 // ! ________________________________Оплата
 document.getElementById('paymentButton').addEventListener('click', () => {
 
-	// *________________________________Открытие модалки
-	document.querySelector(".modal").classList.add("show");
+	if (closeSelectedSeats(seats) === 0) {
 
-	// *________________________________Заполнение информацией
-	const modalContentInfo = document.querySelector(".modal-content .info");
-	modalContentInfo.innerHTML = "";
+		document.querySelector(".error-text_content").textContent = "Выберите места";
+		document.querySelector(".error").classList.add("show-error");
+		setTimeout(() => {
+			document.querySelector(".error").classList.remove("show-error");
+		}, 3000)
 
-	const date = document.querySelector(".day.selected input").value;
-	const dateInfo = document.createElement('p');
-	dateInfo.textContent = `Дата: ${date}`;
+	} else {
 
-	const cinemaInfo = document.createElement('p');
-	cinemaInfo.textContent = `Кинотеатр: ${cinemaValue}`;
+		// *________________________________Заполнение информацией модалки
+		const modalContentInfo = document.querySelector(".modal-content .info");
+		modalContentInfo.innerHTML = "";
 
-	const timeInfo = document.createElement('p');
-	timeInfo.textContent = `Время: ${timeValue}`;
+		const date = document.querySelector(".day.selected input").value;
+		const dateInfo = document.createElement('p');
+		dateInfo.textContent = `Дата: ${date}`;
 
-	const priceInfo = document.createElement('p');
-	priceInfo.textContent = `Итоговая сумма: ${totalPayment} ₽`;
+		const cinemaInfo = document.createElement('p');
+		cinemaInfo.textContent = `Кинотеатр: ${cinemaValue}`;
 
-	modalContentInfo.appendChild(dateInfo);
-	modalContentInfo.appendChild(cinemaInfo);
-	modalContentInfo.appendChild(timeInfo);
-	modalContentInfo.appendChild(priceInfo);
+		const timeInfo = document.createElement('p');
+		timeInfo.textContent = `Время: ${timeValue}`;
 
-	// TODO Сделать уведомление об невыбранных местах и невозможность оплаты
+		const priceInfo = document.createElement('p');
+		priceInfo.textContent = `Итоговая сумма: ${totalPayment} ₽`;
 
-	// *________________________________Обновление свободных мест
-	closeSelectedSeats(seats);
+		modalContentInfo.appendChild(dateInfo);
+		modalContentInfo.appendChild(cinemaInfo);
+		modalContentInfo.appendChild(timeInfo);
+		modalContentInfo.appendChild(priceInfo);
 
-	// *________________________________Обновление общей суммы
-	totalPayment = 0;
-	refreshPayment();
+		// *________________________________Открытие модалки
+		document.querySelector(".modal").classList.add("show");
+
+		// *________________________________Обновление свободных мест
+		closeSelectedSeats(seats);
+
+		// *________________________________Обновление общей суммы
+		totalPayment = 0;
+		refreshPayment();
+	}
 });
 
 // * ________________________________Закрытие модалки
 document.querySelector('.modal-close').addEventListener('click', () => {
 	document.querySelector(".modal").classList.remove("show");
+});
+
+// *________________________________Закрытие уведомления об ошибке
+document.querySelector(".error-btn").addEventListener('click', () => {
+	document.querySelector(".error").classList.remove("show-error");
 });
 
 // !________________________________Обновление общей суммы
@@ -80,14 +94,17 @@ for (let i = 0; i < dayButtons.length; i++) {
 	});
 }
 
-// !________________________________Открытие/закрытие гамбургера
-document.querySelector('.gamburger').addEventListener('click', () => {
-	document.querySelector('.gamburger_menu').classList.toggle('show-gamburger');
-});
+// !________________________________click на window
 window.addEventListener('click', (e) => {
+	// *________________________________Закрытие гамбургера вне гамбургера
 	if (e.target != document.querySelector('.gamburger')) {
 		document.querySelector('.gamburger_menu').classList.remove('show-gamburger');
 	}
+});
+
+// !________________________________Открытие/закрытие гамбургера
+document.querySelector('.gamburger').addEventListener('click', () => {
+	document.querySelector('.gamburger_menu').classList.toggle('show-gamburger');
 });
 
 // !________________________________onChange на cinema

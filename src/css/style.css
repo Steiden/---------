@@ -610,6 +610,9 @@ body .main-container #main .session .date .days .day {
   width: 4em;
   padding: 2.5em;
   font-size: 0.8em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 body .main-container #main .session .date .days .day input {
   position: absolute;
@@ -692,6 +695,9 @@ body .main-container #main .cinema-hall .seats .seat {
   height: 1.5em;
   justify-self: center;
   align-self: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 body .main-container #main .cinema-hall .seats .seat:not(.selected):not(.close):hover {
   opacity: 0.6;
@@ -732,6 +738,9 @@ body .main-container #main .cinema-hall .seats-info {
 body .main-container #main .cinema-hall .seats-info .seat-about {
   display: flex;
   align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 body .main-container #main .cinema-hall .seats-info .seat-about:not(:last-child) {
   margin-right: 1em;
@@ -750,6 +759,8 @@ body .main-container #main .cinema-hall .seats-info .free {
 }
 body .main-container #main .cinema-hall .seats-info .close {
   color: rgba(255, 255, 255, 0.39);
+  font-weight: 300;
+  font-size: 0.8em;
 }
 body .main-container #main .cinema-hall .seats-info .selected {
   color: #fe8e05;
@@ -769,6 +780,11 @@ body .main-container #main .payment .total-paid .totalPayment {
 body .main-container #main .payment .total-paid .totalPayment::after {
   content: "₽";
   padding-left: 0.2em;
+}
+body .main-container #main .payment .toPayment {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 body .main-container #main .payment .toPayment_button {
   background-color: #fe8e05;
@@ -794,11 +810,18 @@ body .main-container #main .payment .toPayment_button p {
   transform: translateY(-1%) !important;
 }
 
+.show-error {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 p {
   margin: 0;
 }
 
 .modal {
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
   display: block !important;
   visibility: hidden;
   opacity: 0;
@@ -806,21 +829,26 @@ p {
   left: 50%;
   transform: translate(-50%);
   transition: all linear 0.3s;
-  color: black;
+  color: white;
   width: 35em;
   height: auto;
+  background: center/cover url("../img/mainBackground.png");
 }
 .modal .modal-close {
-  color: black;
   position: absolute;
-  right: 0.4em;
+  padding: 0.4em;
+  right: 0;
   z-index: 1;
 }
 .modal .modal-close .close-btn {
+  color: white;
   background-color: transparent;
   border: none;
 }
 .modal .modal-content {
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
   padding: 1em;
 }
 .modal .modal-content > p:first-of-type {
@@ -836,4 +864,49 @@ p {
 }
 .modal .modal-content .totalSum::after {
   content: "₽";
+}
+
+.error {
+  background-color: rgb(186, 30, 30);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0.3em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30em;
+  height: 2em;
+  transition: all linear 0.3s;
+  visibility: hidden;
+  opacity: 0;
+}
+.error-close button {
+  background-color: transparent;
+  border: none;
+  color: rgb(255, 255, 255);
+  margin-inline: 0.5em;
+}
+.error-text {
+  display: flex;
+  margin-inline: 1em;
+}
+.error-text_type {
+  color: rgb(102, 6, 6);
+  font-weight: bold;
+}
+.error-text_content {
+  margin-inline: 1em;
+}
+.error-line {
+  position: absolute;
+  bottom: 0;
+  left: 1em;
+  width: 28em;
+  height: 0.1em;
+  border-radius: 25px;
+  background-color: white;
+  transition: all 3s linear;
 }
