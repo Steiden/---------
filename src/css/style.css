@@ -699,10 +699,10 @@ body .main-container #main .cinema-hall .seats .seat {
      -moz-user-select: none;
           user-select: none;
 }
-body .main-container #main .cinema-hall .seats .seat:not(.selected):not(.close):hover {
+body .main-container #main .cinema-hall .seats .seat:not(.selected):not(.closed):hover {
   opacity: 0.6;
 }
-body .main-container #main .cinema-hall .seats .seat:not(.close) {
+body .main-container #main .cinema-hall .seats .seat:not(.closed) {
   cursor: pointer;
 }
 body .main-container #main .cinema-hall .seats .seats-1,
@@ -715,7 +715,7 @@ body .main-container #main .cinema-hall .seats .seats-3 {
 }
 body .main-container #main .cinema-hall .seats .seats-1 {
   grid-template: repeat(4, 2.3em)/repeat(19, 2.3em);
-  grid-column: 1/3;
+  grid-column: 1/-1;
 }
 body .main-container #main .cinema-hall .seats .seats-2, body .main-container #main .cinema-hall .seats .seats-3 {
   grid-template: repeat(4, 2.3em)/repeat(10, 2.3em);
@@ -750,15 +750,13 @@ body .main-container #main .cinema-hall .seats-info img {
   padding: 0.5em;
 }
 body .main-container #main .cinema-hall .seats-info .free, body .main-container #main .cinema-hall .seats-info .selected, body .main-container #main .cinema-hall .seats-info .closed {
-  display: flex;
   font-weight: 300;
   font-size: 0.8em;
 }
 body .main-container #main .cinema-hall .seats-info .free {
   color: rgba(255, 255, 255, 0.58);
 }
-body .main-container #main .cinema-hall .seats-info .close {
-  cursor: auto;
+body .main-container #main .cinema-hall .seats-info .closed {
   color: rgba(255, 255, 255, 0.39);
   font-weight: 300;
   font-size: 0.8em;
@@ -791,12 +789,9 @@ body .main-container #main .payment .toPayment_button {
   background-color: #fe8e05;
   border-radius: 5px;
   border: none;
-  cursor: pointer;
-}
-body .main-container #main .payment .toPayment_button p {
   color: rgb(255, 255, 255);
-  text-decoration: none;
   padding: 1em 2em;
+  cursor: pointer;
 }
 
 .show {
