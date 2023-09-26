@@ -7,7 +7,7 @@ let totalPayment = 0;
 // *________________________________Выбор места
 for (let i = 0; i < seats.length; i++) {
 	seats[i].addEventListener('click', () => {
-		if (seats[i].classList.contains('close')) { }
+		if (seats[i].classList.contains('closed')) { }
 		else if (seats[i].classList.contains('selected')) {
 			seats[i].classList.remove('selected');
 			seats[i].innerHTML = `<img src="src/svg/seat.svg" alt="seat">`;
